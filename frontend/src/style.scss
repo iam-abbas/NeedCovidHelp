@@ -1,0 +1,101 @@
+.app-name {
+	.title {
+		margin: 0;
+	}
+}
+
+main {
+	height: calc(100vh - 120px);
+	display: flex;
+	padding: 50px;
+	//background-color: lightblue;
+}
+
+.side-bar {
+	height: min-content;
+	width: 40%;
+	padding: 0 20px;
+	//background-color: lightblue;
+}
+
+.list-container {
+	width: 60%;
+	height: 100%;
+	overflow-y: scroll;
+	position: relative;
+	padding: 30px !important;
+	//background-color: lightblue;
+}
+
+.tabs-container {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	border-radius: 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 30px;
+	padding: 10px 0;
+}
+
+.lead-item {
+	padding: 15px;
+	max-width: 700px;
+	margin: 0 auto 40px auto;
+
+	h3 {
+		margin: 0;
+		padding-right: 15px;
+	}
+	.d-flex {
+		padding-bottom: 15px;
+		align-items: center;
+	}
+
+	.roww {
+		display: flex;
+		justify-content: space-between;
+		//display: grid;
+		//grid-template-columns: 150px 150px 150px 150;
+
+		.info-wrapper {
+			span {
+				font-weight: 700;
+			}
+		}
+
+		&.address {
+			padding-top: 10px;
+			display: block;
+			//background-color: lightblue;
+		}
+	}
+}
+
+.add-btn {
+	position: fixed;
+	bottom: 80px;
+	right: 20px;
+	z-index: 1000;
+
+	padding: unset;
+	height: 50px;
+	width: 50px;
+	border-radius: 500px;
+
+	font-size: 1.5rem;
+}
+
+//FORM PAGE
+.form-container {
+	padding: 70px;
+}
+
+.form-wrapper {
+	margin-top: 50px;
+	padding: 30px;
+	margin: 0 auto;
+	max-width: 700px;
+}
