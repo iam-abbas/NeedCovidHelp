@@ -14,8 +14,32 @@ import SideBar from 'customComponents/SideBar';
 
 class App extends React.Component {
 	state = {
-		displayData: itemsList,
+		fullList: itemsList,
+		displayList: [],
 	};
+
+	componentDidMount() {
+		this.setState({ displayList: this.state.fullList });
+	}
+
+	handleFilters(event) {
+		console.log(event.target.value);
+		this.setState(prevState => {
+			console.log(prevState.displayList);
+			let filteredList = prevState.displayList.filter(item => {
+				return item.state === event.target.value;
+			});
+
+			return { displayList: filteredList };
+		});
+	}
+
+	handTypeFilter(event) {
+		let filteredList = this.state.fullList.filter(item => {
+			return item.itemName === event.target.value;
+		});
+		this.setState({ displayList: filteredList });
+	}
 
 	render() {
 		return (
@@ -23,9 +47,9 @@ class App extends React.Component {
 				<BackgroundColorWrapper>
 					<NavigationBar />
 					<main>
-						<SideBar />
+						<SideBar filterHandler={this.handleFilters.bind(this)} />
 						<Scrollbars className='list-container'>
-							{this.state.displayData.map((el, index) => {
+							{this.state.displayList.map((el, index) => {
 								return <LeadItem key={index} data={el} />;
 							})}
 							<Button className='add-btn' color='danger'>
@@ -33,7 +57,7 @@ class App extends React.Component {
 							</Button>
 						</Scrollbars>
 					</main>
-					<TabsContainer />
+					<TabsContainer typeFilterHandler={this.handTypeFilter.bind(this)} />
 				</BackgroundColorWrapper>
 			</ThemeContextWrapper>
 		);

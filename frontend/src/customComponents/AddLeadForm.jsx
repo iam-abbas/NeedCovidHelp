@@ -24,7 +24,6 @@ class AddLeadForm extends React.Component {
 	}
 
 	formValidate() {
-		console.log(this.state.number);
 		if (this.state.number.length !== 10) {
 			alert('Phone number must be 10 digits long');
 			return false;
@@ -46,7 +45,12 @@ class AddLeadForm extends React.Component {
 							<form onSubmit={this.handleSubmit.bind(this)}>
 								<FormGroup>
 									<Label for='itemName'>Item Name</Label>
-									<Input type='select' name='item name' id='itemName' onChange={this.handleChange.bind(this)}>
+									<Input 
+										type='select' 
+										name='item name' 
+										id='itemName' 
+										onChange={this.handleChange.bind(this)}
+									>
 										<option value='oxygen'>Oxygen</option>
 										<option value='beds'>Hospital Beds</option>
 										<option value='plasma'>Plasma</option>
@@ -66,7 +70,13 @@ class AddLeadForm extends React.Component {
 								</FormGroup>
 								<FormGroup>
 									<Label for='state'>State</Label>
-									<Input required type='select' name='state' id='state' onChange={this.handleChange.bind(this)}>
+									<Input 
+										required 
+										type='select' 
+										name='state' 
+										id='state' 
+										onChange={this.handleChange.bind(this)}
+									>
 										{statesList.map((el, index) => {
 											return (
 												<option value={el} key={index}>

@@ -32,7 +32,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import App from 'App';
 import AddLeadForm from 'customComponents/AddLeadForm';
 
-ReactDOM.render(<AddLeadForm />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
 
 {
 	/* <ThemeContextWrapper>

@@ -20,8 +20,8 @@ const LeadItem = ({ data }) => {
 						{data.quantity}
 					</div>
 					<div className='info-wrapper'>
-						<span>City: </span>
-						{data.city}
+						<span>State: </span>
+						{data.state}
 					</div>
 					<div className='info-wrapper'>
 						<span>Contact: </span>
