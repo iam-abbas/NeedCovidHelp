@@ -9,12 +9,12 @@ import LeadItem from 'customComponents/LeadItem';
 import { Container, Button } from 'reactstrap';
 import { Scrollbars } from 'rc-scrollbars';
 
-import { sampleData } from 'sampleData';
+import { itemsList } from 'sampleData';
 import SideBar from 'customComponents/SideBar';
 
 class App extends React.Component {
 	state = {
-		displayData: sampleData,
+		displayData: itemsList,
 	};
 
 	render() {
