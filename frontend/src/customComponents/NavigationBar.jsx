@@ -41,7 +41,7 @@ class NavigationBar extends React.Component {
 						</Nav>
 						<Form inline className='ml-auto'>
 							<FormGroup className='no-border'>
-								<Input type='text' placeholder='Search' />
+								<Input type='text' placeholder='Search' onChange={this.props.searchHandler} />
 							</FormGroup>
 							<Button color='primary' className='btn-link btn-icon btn-round'>
 								<i className='tim-icons icon-zoom-split'></i>

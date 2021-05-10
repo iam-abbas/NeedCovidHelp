@@ -41,11 +41,21 @@ class App extends React.Component {
 		this.setState({ displayList: filteredList });
 	}
 
+	handleSearch(event) {
+		var searchValue = event.target.value;
+		this.setState(prevState => {
+			let filterList = prevState.fullList.filter(el => {
+				return el.address.search(new RegExp(searchValue, 'i')) !== -1;
+			});
+			return { displayList: filterList };
+		});
+	}
+
 	render() {
 		return (
 			<ThemeContextWrapper>
 				<BackgroundColorWrapper>
-					<NavigationBar />
+					<NavigationBar searchHandler={this.handleSearch.bind(this)} />
 					<main>
 						<SideBar filterHandler={this.handleFilters.bind(this)} />
 						<Scrollbars className='list-container'>
